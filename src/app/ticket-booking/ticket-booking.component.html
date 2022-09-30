@@ -1,0 +1,72 @@
+<div style="min-width: 100%;min-height: 200%; background-image: url('assets/Images/train img.jpg');">
+
+    <div class="container" style="max-width: 600px;background-color: lightblue;">
+        <h2 class="textual">Reserve Your Ticket</h2>
+        <form #Bookingform="ngForm" (ngSubmit)="booking()">
+          {{Bookingform.form.valid}}
+    
+          <div class="form-group">
+            <label for="email">Id:</label>
+            <input type="email" class="form-control" placeholder="Enter id" name="id" [(ngModel)]="ticketuser.id" 
+             #id="ngModel"[class.is-invalid]="id.invalid && id.touched">
+            <small class="text-danger" [class.d-none]="id.valid || id.untouched">Id is required field</small>
+          </div>
+    
+          <div class="form-group">
+            <label for="username">Name:</label>
+            <input type="text" class="form-control" placeholder="Enter name" name="name" [(ngModel)]="ticketuser.name" required #name="ngModel"
+            [class.is-invalid]="name.invalid && name.touched">
+            <small class="text-danger" [class.d-none]="name.valid || name.untouched"> Name is required field</small>
+          </div>
+
+          <div class="form-group">
+            <label for="username">SourceStation:</label>
+            <input type="text" class="form-control" placeholder="Enter sourceStation" name="sourceStation" [(ngModel)]="ticketuser.sourceStation" required #sourceStation="ngModel"
+            [class.is-invalid]="sourceStation.invalid && sourceStation.touched">
+            <small class="text-danger" [class.d-none]="sourceStation.valid || sourceStation.untouched">SourceStation is required field</small>
+          </div>
+        
+          <div class="form-group">
+            <label for="username">destinationStation:</label>
+            <input type="text" class="form-control" placeholder="Enter destinationStation" name="destinationStation" [(ngModel)]="ticketuser.destinationStation" required #destinationStation="ngModel"
+            [class.is-invalid]="destinationStation.invalid && destinationStation.touched">
+            <small class="text-danger" [class.d-none]="destinationStation.valid || destinationStation.untouched">DestinationStation is required field</small>
+          </div>
+    
+          <div class="form-group">
+            <label for="pwd">BankName:</label>
+            <input type="text" class="form-control" placeholder="Enter BankName" name="BankName"  #BankName="ngModel" (ngModel)="ticketuser.BankName" required
+            [class.is-invalid]="BankName.invalid && BankName.touched">
+            <small class="text-danger" [class.d-none]="BankName.valid || BankName.untouched">BankName is required field</small>
+          </div>
+
+          <div class="form-group">
+            <label for="username">CreditNo:</label>
+            <input type="text" class="form-control" placeholder="Enter creditno" name="creditno" [(ngModel)]="ticketuser.creditno" required #creditno="ngModel"
+            [class.is-invalid]="creditno.invalid && creditno.touched">
+            <small class="text-danger" [class.d-none]="creditno.valid || creditno.untouched">CreditNo is required field</small>
+          </div>
+
+          <div class="form-group">
+            <label for="username">Fare:</label>
+            <input type="text" class="form-control" placeholder="Enter fare" name="fare" [(ngModel)]="ticketuser.fare" required #fare="ngModel"
+            [class.is-invalid]="fare.invalid && fare.touched">
+            <small class="text-danger" [class.d-none]="fare.valid || fare.untouched">Fare is required field</small>
+          </div>
+
+    
+          <button [disabled]="Bookingform.form.invalid" type="submit" class="btn btn-Info">Submit</button>
+          <button (click) = "bookanotherticket()" type="submit" class="btn btn-Info">Book Another Ticket</button>
+          <button (click) = "back()" type="submit" class="btn btn-Info">Back</button>
+          <button (click) = "logout()" type="submit" class="btn btn-Info">Logout</button>
+    
+    
+        </form> 
+      </div>
+    </div> 
+
+    
+    
+    
+    
+    

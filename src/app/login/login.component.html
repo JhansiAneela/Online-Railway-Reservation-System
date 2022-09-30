@@ -1,0 +1,36 @@
+<div style="min-width: 100%;min-height: auto; background-image: url('assets/Images/casestudy img.jpeg');">
+    <div class="container" style="max-width: 600px;background-color: #add8e6;">
+        <h2>User/Admin Login</h2>
+    
+        <form #loginform="ngForm" (ngSubmit)="login_user()">
+          {{loginform.form.valid}}
+          <small class="text-danger">{{message}}</small>
+    
+          <div class="form-group">
+            <label for="email">EmailId:</label>
+            <input type="email" class="form-control" placeholder="Enter email" name="email" [(ngModel)]="loginuser.emailId" required #email="ngModel"[class.is-invalid]="email.invalid && email.touched">
+            <small class="text-danger" [class.d-none]="email.valid || email.untouched">Email Id is required field</small>
+          </div>
+    
+          <div class="form-group">
+            <label for="pwd">Password:</label>
+            <input type="password" class="form-control" placeholder="Enter password" name="password" [(ngModel)]="loginuser.password" required #password="ngModel"
+            [class.is-invalid]="password.invalid && password.touched"
+            >
+            <small class="text-danger" [class.d-none]="password.valid || password.untouched">password is required field</small>
+          </div>
+    
+          <div class="checkbox">
+            <label><input type="checkbox" name="remember"> Remember me</label>
+          </div>
+    
+          <button [disabled]="loginform.form.invalid"type="submit" class="btn btn-Info">Login</button>
+    
+        </form>
+    
+        <small (click)="gotoregistration()"style="font-size:1.5vw">New user ? Register here</small>
+
+        
+      </div>
+    </div>  
+    

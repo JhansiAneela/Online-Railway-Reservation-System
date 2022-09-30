@@ -1,0 +1,13 @@
+export class Registeruser {
+
+      id :Number = 0 ;
+     emailId : string = '';
+     name :string = '';
+     mobileNo :string = '';
+     password : string = '';
+     gender :string = '';
+     age :number = 0;
+     BankName :string = '';
+     creditno :string = '';
+     role : string = '';
+}

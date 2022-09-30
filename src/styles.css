@@ -1,0 +1,10 @@
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
+
+html,
+body
+{
+    height:100%;
+    background-image: url("assets/Images/casestudy img.jpeg");
+
+}
